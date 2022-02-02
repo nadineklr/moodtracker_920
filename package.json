@@ -1,0 +1,11 @@
+{
+  "name": "05_moodtracker_nodejs",
+  "version": "1.0.0",
+  "description": "Tracks your mood and archives it in a db",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nadine Keller",
+  "license": "ISC"
+}
