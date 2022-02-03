@@ -3,8 +3,7 @@
 const express = require('express')  // express aus nodejs modules ordner holen
 const Datastore = require('nedb')
 const fetch = require('node-fetch') // node fetch holen, immer die Vesion, die installiert wurde(hier v2)
-
-// const fetch = require('node-fetch')
+require('dotenv').config()
 
 
 // Start express
@@ -14,7 +13,7 @@ const app = express()
 
 // zuhören - es brauche einen Port, callback function
 // Port definieren
-const port = 3000;
+const port = process.env.port|| 3000; // falls es im server schon eine port variable gibt, wird diese verwendet. Sonst 3000.
 
 app.listen(port, () => {
   console.log(`app is listening at http://localhost:${port}`)
@@ -39,8 +38,8 @@ app.get('/weather/:latlon', async (req, res) => {
   console.log(latlon)
 
   // Api keys
-  const weatherApiKey = 'e1e68bd00b20074be3215b93558ef4b6'
-  const airApiKey = '6e333ff5261c31867b095a6ad9e0e04eaf3f3596'
+  const weatherApiKey = process.env.API_KEY_WEATHER
+  const airApiKey = provess.env.API_KEY_AQI
 
   // api requests
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latlon[0]}&lon=${latlon[1]}&appid=${weatherApiKey}`

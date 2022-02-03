@@ -12,7 +12,7 @@ function setup () {
   video.size(230, 240) // video Fenstergrösse
 
 
-  let lat, lon, city, temperature, description
+  let lat, lon, city, temperature, description, aqi
   // test if geolocation is avaliable
   if ('geolocation' in navigator) {
     // console.log(navigator)
@@ -99,7 +99,8 @@ function setup () {
       city,
       temperature,
       description,
-      image64
+      image64,
+      aqi
     }
 
 
