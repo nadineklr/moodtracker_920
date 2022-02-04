@@ -16,7 +16,15 @@ async function fetchData() {
   data.forEach( entry => {
     const container = document.createElement('div')
     container.innerHTML = `
-    <div>${entry.mood}</div>`
+    <div class="moodbox">
+      <p class="mood-title">Mood: ${entry.mood}</p>
+      <img src="${entry.image64}" alt="">
+      <div class="weatherdata">
+        <div class="air">Air Quality Index: ${entry.aqi}</div>
+        <div class="temp">Temperature: ${entry.temperature}</div>
+        <div class="weather">Weather: ${entry.description}</div>
+      </div>
+    </div>`
 
     document.querySelector('section').append(container)
 

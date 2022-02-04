@@ -39,7 +39,7 @@ app.get('/weather/:latlon', async (req, res) => {
 
   // Api keys
   const weatherApiKey = process.env.API_KEY_WEATHER
-  const airApiKey = provess.env.API_KEY_AQI
+  const airApiKey = process.env.API_KEY_AQI
 
   // api requests
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latlon[0]}&lon=${latlon[1]}&appid=${weatherApiKey}`
@@ -50,6 +50,8 @@ app.get('/weather/:latlon', async (req, res) => {
 
   const aqiResponse = await fetch(airUrl)
   const aqiData = await aqiResponse.json()
+
+  console.log(weatherData)
 
 
   
@@ -71,7 +73,7 @@ app.get('/weather/:latlon', async (req, res) => {
 // Responsible for database API POST / insert data into database
 app.post('/api', (req, res) => {
   const data = req.body
-  // console.log(data)
+   console.log(data)
 
   data.timestamp = Date.now()
 

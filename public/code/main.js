@@ -3,7 +3,7 @@
 // wird ganz am Anfang ausgeführt bei p5js
 function setup () {
 
-  // diisable p5js canvas
+  // disable p5js canvas
   noCanvas()
 
   // capture vide
@@ -20,10 +20,8 @@ function setup () {
 
     // callback funktion muss async sein! bei callback mitgeben
     navigator.geolocation.getCurrentPosition( async position => {
-       // console.log(position)
-
-
-
+        // console.log(position)
+        // console.log(navigator)
 
 
       try {
@@ -69,8 +67,6 @@ function setup () {
       } catch(error) {
         console.error('error')
       }
-      
-
     })
 
   } else {
@@ -116,7 +112,7 @@ function setup () {
     const response = await fetch('/api', options) // endpoint 
     const json = await response.json()
 
-   // console.log(json)
+    console.log(json)
 
 
 
